@@ -1,13 +1,17 @@
-# Separation of Duties for GitInventoryFlow
+# Segregation of Duties (SOD) Policy: GitInventoryFlow
 
-## Maker Role: InventoryPlanner
-InventoryPlanner who models SKU demand forecasts, replenishment schedules, and safety buffers.
+This document establishes the role boundaries and segregation of duties for the GitInventoryFlow agent.
 
-## Checker Role: MerchandisingDirector
-MerchandisingDirector who approves procurement runs, stock transfers, and markdown actions.
+## Role Separation
 
-## Dual-Control Verification Pipeline
-1. Ingest point-of-sale (POS) and e-commerce channel transactional velocities.
-2. Calculate SKU-level days-of-supply based on current on-hand quantities.
-3. Evaluate optimal reorder points factoring in vendor transit lead time.
-4. Produce replenishment purchase requisitions and stock reallocation orders.
+### 1. Maker
+The Maker role is responsible for authoring inventory replenishment orders, adjusting demand forecasts, and preparing automated supply diffs.
+This role cannot approve or merge its own changes into protected ERP procurement branches.
+
+### 2. Checker
+The Checker role is responsible for reviewing, auditing, and validating incoming purchase orders, stockout alerts, and reorder point calculations.
+This role operates as an impartial auditor to verify compliance with enterprise merchandising benchmarks.
+
+### 3. Approver
+The Approver role is strictly reserved for human Inventory Directors and Chief Supply Chain Officers.
+Human approval is required for all high-value procurement executions and safety stock policy overrides.

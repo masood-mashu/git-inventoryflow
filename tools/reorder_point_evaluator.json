@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "name": "reorder_point_evaluator",
+  "description": "Calculates optimal reorder point accounting for lead time and safety buffer",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "reorder_data_json": {
+        "type": "string",
+        "description": "JSON string containing daily_demand, lead_time_days, and safety_stock"
+      }
+    },
+    "required": [
+      "reorder_data_json"
+    ]
+  },
+  "returns": {
+    "type": "object",
+    "properties": {
+      "status": {
+        "type": "string"
+      }
+    }
+  }
+}

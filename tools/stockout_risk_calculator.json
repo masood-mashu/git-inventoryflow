@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "name": "stockout_risk_calculator",
+  "description": "Calculates days of supply remaining based on current stock and daily velocity",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "sku_data_json": {
+        "type": "string",
+        "description": "JSON string with on_hand and daily_sales_velocity"
+      }
+    },
+    "required": [
+      "sku_data_json"
+    ]
+  },
+  "returns": {
+    "type": "object",
+    "properties": {
+      "status": {
+        "type": "string"
+      }
+    }
+  }
+}

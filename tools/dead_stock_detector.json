@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "name": "dead_stock_detector",
+  "description": "Identifies dormant inventory SKUs with zero units sold over observation window",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "days_without_sale": {
+        "type": "string",
+        "description": "Number of consecutive days since last retail transaction"
+      }
+    },
+    "required": [
+      "days_without_sale"
+    ]
+  },
+  "returns": {
+    "type": "object",
+    "properties": {
+      "status": {
+        "type": "string"
+      }
+    }
+  }
+}
