@@ -1,0 +1,39 @@
+spec_version: "0.1.0"
+name: git-inventoryflow
+version: 1.0.0
+description: "Autonomous Omnichannel Safety Stock, Stockout Risk & SKU Velocity Predictor Agent"
+author: "masood-mashu"
+license: "Apache-2.0"
+
+model:
+  preferred: "openai:gpt-4o"
+  fallback:
+    - "anthropic:claude-3-5-sonnet"
+    - "openai:gpt-4o-mini"
+  constraints:
+    temperature: 0.1
+    max_tokens: 4096
+
+skills:
+  - inventory-stockout-prediction
+  - supply-reorder-optimization
+
+tools:
+  - stockout-risk-calculator
+  - reorder-point-evaluator
+  - dead-stock-detector
+
+runtime:
+  max_turns: 50
+  timeout: 120
+
+tags:
+  - retail
+  - ecommerce
+  - inventory-management
+  - safety-stock
+  - passport-challenge
+
+metadata:
+  passport_id: "aps-inventoryflow-01"
+  passport_category: "Retail & e-commerce"

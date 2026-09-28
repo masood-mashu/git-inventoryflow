@@ -1,0 +1,18 @@
+name: reorder-point-evaluator
+version: 1.0.0
+description: "Calculates optimal reorder point accounting for supplier lead time and safety stock buffer"
+input_schema:
+  type: object
+  properties:
+    reorder_data_json:
+      type: string
+      description: "JSON string containing daily_demand, lead_time_days, and safety_stock"
+  required:
+    - reorder_data_json
+implementation:
+  type: script
+  path: reorder_point_evaluator.py
+  runtime: python3
+annotations:
+  read_only: true
+  idempotent: true

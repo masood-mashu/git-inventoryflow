@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "git-inventoryflow": {
+      "command": "python",
+      "args": [
+        "-m",
+        "tools"
+      ],
+      "env": {
+        "STANDARD": "OpenGAP-v0.1.0"
+      }
+    }
+  }
+}

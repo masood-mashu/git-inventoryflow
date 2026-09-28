@@ -1,0 +1,18 @@
+name: stockout-risk-calculator
+version: 1.0.0
+description: "Calculates days of supply remaining based on current on-hand stock and daily velocity"
+input_schema:
+  type: object
+  properties:
+    sku_data_json:
+      type: string
+      description: "JSON string with on_hand and daily_sales_velocity"
+  required:
+    - sku_data_json
+implementation:
+  type: script
+  path: stockout_risk_calculator.py
+  runtime: python3
+annotations:
+  read_only: true
+  idempotent: true
